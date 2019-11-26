@@ -1,3 +1,8 @@
 name: default
 title: Default Test Suite
 summary: The expected resources should be created
+attributes:
+  - name: sftp_endpoint
+    type: string
+    required: true
+    description: The SFTP server endpoint created
