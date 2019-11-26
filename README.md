@@ -56,15 +56,15 @@ bundle exec dotenv kitchen test -d always
 
 * Kitchen. Deploy only:
 ```shell script
-bundle exec kitchen converge
+bundle exec dotenv kitchen converge
 ```
 
 * Kitchen. Test only:
 ```shell script
-bundle exec kitchen verify
+bundle exec dotenv kitchen verify
 ```
 
 * Kitchen. Destroy only:
 ```shell script
-bundle exec kitchen destroy
+bundle exec dotenv kitchen destroy
 ```
