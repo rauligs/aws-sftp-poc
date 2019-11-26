@@ -3,7 +3,7 @@ driver:
   root_module_directory: terraform
   backend_configurations:
     region: "eu-west-1"
-    bucket: "thenesor-tf-states"
+    bucket: <%= ENV['POC_SFTP_TERRAFORM_STATE'] %>
     key: "test-states/terraform-test.tfstate"
 
 provisioner:
@@ -23,7 +23,7 @@ suites:
   - name: default
     driver:
       variables:
-        s3_remote_state_bucket_name: "thenesor-tf-states"
-        s3_poc_sftp_bucket_name: "thenesor-sftp-poc"
-        poc_sftp_user_name: "pocsftpusertest"
-        poc_sftp_user_ssh_key: <%= ENV['POC_SFTP_SSH'] %>
+        s3_remote_state_bucket_name: <%= ENV['POC_SFTP_TERRAFORM_STATE'] %>
+        s3_poc_sftp_bucket_name: <%= ENV['POC_SFTP_BUCKET_NAME'] %>
+        poc_sftp_user_name: <%= ENV['POC_SFTP_USER_NAME'] %>
+        poc_sftp_user_ssh_key: <%= ENV['POC_SFTP_USER_SSH'] %>

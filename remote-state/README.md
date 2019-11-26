@@ -5,8 +5,9 @@ configuration expected to run only once (per backend state). Kitchen tests won't
 needs to be set up prior running Kitchen tests for our lambdas.
 
 ## Run
+* Make sure `.env` have been already sourced, otherwise create `POC_SFTP_TERRAFORM_STATE` env var
 
 ```shell script
 terraform init
-terraform apply
+TF_VAR_s3_remote_state_bucket_name=$(echo $POC_SFTP_TERRAFORM_STATE) terraform apply
 ```

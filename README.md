@@ -25,28 +25,33 @@ brew install terraform
 ```shell script
 terraform fmt -check
 ```
-## Generate SSH Key for SFTP
+
+## Environment variables (dotenv)
+copy `.env.example` as `.env` and edit the file populating it with the desired values
+```shell script
+cp .env.example .env
+```
+
+### Generate SSH Key for SFTP
 ```shell script
 ssh-keygen -f poc_sftp_ssh -t rsa
 ssh-add -K poc_sftp_ssh
-export POC_SFTP_SSH=$(cat poc_sftp_ssh.pub)
+pbcopy < poc_sftp_ssh.pub
 ```
+* Now the public key will be already in the clipboard, paste in as the value for `POC_SFTP_USER_SSH` env var
 
-* the public key will be already in the clipboard, paste in in kitchen.yml poc_sftp_user_ssh_key 
-
-## Environment variables
+### Load environment vars
 ```shell script
-export AWS_PROFILE=your_aws_profile_here
-export AWS_REGION=eu-west-1
+source .env
 ```
 
 ## Terraform Remote State
-* [Create S3 remote state bucket](remote-state/README.md) (only once per remote state)
+* [How to create a S3 remote state bucket](remote-state/README.md) (once per remote state)
 
 ## Kitchen Terraform
 * Run kitchen terraform (converge + verify + destroy):
 ```shell script
-bundle exec kitchen test -d always
+bundle exec dotenv kitchen test -d always
 ```
 
 * Kitchen. Deploy only:
