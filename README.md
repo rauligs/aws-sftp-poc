@@ -32,17 +32,22 @@ terraform fmt -check
 bundle install
 ```
 
-* Run tests (converge + verify + destroy):
+* Run kitchen terraform (converge + verify + destroy):
 ```shell script
 bundle exec kitchen test -d always
 ```
 
-* Manual test deployed infra:
+* Kitchen. Deploy only:
 ```shell script
 bundle exec kitchen converge
 ```
 
-* Manual destroy deployed infra:
+* Kitchen. Test only:
+```shell script
+bundle exec kitchen verify
+```
+
+* Kitchen. Destroy only:
 ```shell script
 bundle exec kitchen destroy
 ```
