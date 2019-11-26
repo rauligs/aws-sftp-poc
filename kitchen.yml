@@ -24,4 +24,4 @@ suites:
     driver:
       variables:
         s3_remote_state_bucket_name: "thenesor-tf-states"
-        s3_poc_sftp_bucket_name: "sftp-poc"
+        s3_poc_sftp_bucket_name: "thenesor-sftp-poc"

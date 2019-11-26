@@ -1,5 +1,8 @@
 # aws-sftp-poc
 * Pre-req. Install bundler:
+```shell script
+brew update
+```
 
 ```shell script
 brew install ruby
@@ -8,11 +11,10 @@ gem install bundler
 
 * Pre-req. Install terraform:
 ```shell script
-brew update
 brew install terraform
 ```
 
-* Pre-req. [Create S3 remote state bucket](infra/remote-state/README.md) (only once per remote state)
+* Pre-req. [Create S3 remote state bucket](remote-state/README.md) (only once per remote state)
 
 * Pre-req. environment vars
 ```shell script
@@ -25,7 +27,7 @@ export AWS_REGION=eu-west-1
 terraform fmt -check
 ```
 
-* Install dependencies:
+* Install ruby dependencies:
 ```shell script
 bundle install
 ```
