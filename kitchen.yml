@@ -25,3 +25,5 @@ suites:
       variables:
         s3_remote_state_bucket_name: "thenesor-tf-states"
         s3_poc_sftp_bucket_name: "thenesor-sftp-poc"
+        poc_sftp_user_name: "pocsftpusertest"
+        poc_sftp_user_ssh_key: <%= ENV['POC_SFTP_SSH'] %>

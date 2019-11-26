@@ -3,4 +3,6 @@
 .terraform
 terraform.tfvars
 terraform.tfstate*
+poc_sftp_ssh
+poc_sftp_ssh.pub
 .env
