@@ -6,3 +6,11 @@ attributes:
     type: string
     required: true
     description: The SFTP server endpoint created
+  - name: sftp_id
+    type: string
+    required: true
+    description: The SFTP server id (endpoint subdomain)
+  - name: bucket_name
+    type: string
+    required: true
+    description: The bucket name represents SFTP folder where users has access to

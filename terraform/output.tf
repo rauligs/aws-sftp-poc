@@ -1,5 +1,5 @@
 output "bucket_name" {
-  value = aws_s3_bucket.poc-sftp-s3-bucket.id
+  value = aws_s3_bucket.poc-sftp-s3-bucket.bucket
 }
 
 output "sftp_id" {

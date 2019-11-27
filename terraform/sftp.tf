@@ -46,12 +46,22 @@ resource "aws_iam_role_policy" "sftp-poc-s3-role-policy" {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::${var.s3_poc_sftp_bucket_name}/*"
+          "Sid": "AllowListingFiles",
+          "Effect": "Allow",
+          "Action": [
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+          ],
+          "Resource": "arn:aws:s3:::${var.s3_poc_sftp_bucket_name}"
+        },
+        {
+          "Sid": "AllowObjectsAccess",
+          "Effect": "Allow",
+          "Action": [
+            "s3:GetObject",
+            "s3:GetObjectVersion"
+          ],
+          "Resource": "arn:aws:s3:::${var.s3_poc_sftp_bucket_name}/*"
         }
     ]
 }

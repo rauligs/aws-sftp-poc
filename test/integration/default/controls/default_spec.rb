@@ -29,6 +29,8 @@ describe "The IAM role #{sftp_iam_role_name}" do
     EOF
   end
   it { should be_allowed_action('s3:GetObject').resource_arn("arn:aws:s3:::#{s3_poc_sftp_bucket_name}/*") }
-  it { should be_allowed_action('s3:ListBucket').resource_arn("arn:aws:s3:::#{s3_poc_sftp_bucket_name}/*") }
+  it { should be_allowed_action('s3:GetObjectVersion').resource_arn("arn:aws:s3:::#{s3_poc_sftp_bucket_name}/*") }
+  it { should be_allowed_action('s3:ListBucket').resource_arn("arn:aws:s3:::#{s3_poc_sftp_bucket_name}") }
+  it { should be_allowed_action('s3:GetBucketLocation').resource_arn("arn:aws:s3:::#{s3_poc_sftp_bucket_name}") }
   it { should be_allowed_action('logs:*').resource_arn("arn:aws:logs:*:*:*") }
 end

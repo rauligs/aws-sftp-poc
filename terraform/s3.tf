@@ -3,6 +3,6 @@ resource "aws_s3_bucket" "poc-sftp-s3-bucket" {
   acl     = "private"
 
   tags = {
-    Name        = "Bucket POC to store direct and retrieve through sftp"
+    Name = "Bucket POC to store direct and retrieve through sftp"
   }
 }
