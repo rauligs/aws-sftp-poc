@@ -68,3 +68,12 @@ bundle exec dotenv kitchen verify
 ```shell script
 bundle exec dotenv kitchen destroy
 ```
+## Test sftp connectivity
+Once terraform is finished it will output the sftp endpoint. 
+To manually test it works (takes around 15-20 min after it finishes), deposit a file in the bucket and:
+```shell script
+sftp -i poc_sftp_ssh {username}@{endpoint_here}
+sftp> cd {bucket_name}
+sftp> ls
+sftp> get {filename}
+```
