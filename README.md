@@ -1,4 +1,6 @@
 # aws-sftp-poc
+Expose S3 bucket as SFTP using terraform
+Integration tests using Kitchen terraform
 
 ## Installation
 * Pre-req. Install bundler:
