@@ -45,6 +45,14 @@ pbcopy < poc_sftp_ssh.pub
 source .env
 ```
 
+## Deployments and testing from local machine
+Make sure in every `backend.tf` and `provider.tf` uncomment the lines:  
+  ```hcl-terraform
+     shared_credentials_file = "~/.aws/credentials"
+     profile                 = "your_aws_profile_here"
+```
+_Unless you export your AWS credentials as environment variables_
+
 ## Terraform Remote State
 * [How to create a S3 remote state bucket](remote-state/README.md) (once per remote state)
 

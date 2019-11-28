@@ -9,5 +9,5 @@ needs to be set up prior running Kitchen tests for our lambdas.
 
 ```shell script
 terraform init
-TF_VAR_s3_remote_state_bucket_name=$(echo $POC_SFTP_TERRAFORM_STATE) terraform apply
+TF_VAR_s3_remote_state_bucket_name=bucket_name terraform apply
 ```

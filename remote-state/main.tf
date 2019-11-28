@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "eu-west-1"
-}
-
 resource "aws_s3_bucket" "terraform_state" {
   bucket = var.s3_remote_state_bucket_name
 
